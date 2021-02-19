@@ -15,7 +15,6 @@ class light:
         self.triggers = ["light"]
 
     def run(self, raw):
-        # raw = sanitize(self.triggers,raw)
         try:
             os.system(raw)
             speak("Ran the command: " + raw)
