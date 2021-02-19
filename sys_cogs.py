@@ -71,7 +71,7 @@ class update:
         speak("Updating the source code")
         os.system("git pull")
         os.system("git --no-pager log --decorate=short --pretty=oneline -n1 > tmpf")
-        msg = open("tmpf").read()
+        msg = open("tmpf").read().split(")")[1]
         os.remove("tmpf")
         speak("Git reports the following changes: " + msg)
         speak("Updates are complete. They will have no effect until I am restarted.")
