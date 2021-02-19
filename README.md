@@ -10,3 +10,10 @@ A trash voice assistant that can be extended fairly easily
     * On arch: `<AUR HELPER> -S tuxi-git`
 * Folow instructions [here](https://github.com/Uberi/speech_recognition/blob/master/reference/library-reference.rst#recognizer_instancerecognize_google_cloudaudio_data-audiodata-credentials_json-unionstr-none--none-language-str--en-us-preferred_phrases-unioniterablestr-none--none-show_all-bool--false---unionstr-dictstr-any) to get a credentials json file for the google cloud speech to text api. (And set `credentials_file` to the saved file path)
 * You should be done. Try `python3 assist.py`
+
+## Add features
+* Copy `blank_cog.py` to some file name
+* Edit and do the things!
+* Add a line like `from <your_file_name> import <your_class_name>` to `assist.py`
+* Init. a class in the cogs array in `assist.py`. For example, `cogs = [ ...., mySpecialThing()]`
+* Done!
