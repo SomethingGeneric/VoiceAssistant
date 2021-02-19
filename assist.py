@@ -36,7 +36,8 @@ while True:
                 audio_data=audio_text, credentials_json=open(credentials_file).read()
             )
         except Exception as e:
-            speak("Google cloud error: " + str(e))
+            # we don't really care it'll be fixed by next loop hopefully
+            pass
 
     try:
 
