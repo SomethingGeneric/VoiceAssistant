@@ -1,9 +1,10 @@
 from hello_cog import hello
 from light_cog import light
-from sys_cogs import check, apply, reboot
+from sys_cogs import check, apply, reboot, update
+from weather_cog import weather
 
 # Cogs (extensions) to add. We try to match against them first.
-cogs = [hello(), light(), check(), apply(), reboot()]
+cogs = [hello(), light(), check(), apply(), reboot(), weather(), update()]
 # in theory cogs could have other init args, but why bother?
 # ()'s just because Python syntax
 
