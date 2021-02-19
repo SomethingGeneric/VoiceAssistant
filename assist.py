@@ -2,11 +2,15 @@ from hello_cog import hello
 from light_cog import light
 from sys_cogs import check, apply, reboot
 
+# Cogs (extensions) to add. We try to match against them first.
+cogs = [hello(), light(), check(), apply(), reboot()]
 # in theory cogs could have other init args, but why bother?
 # ()'s just because Python syntax
-cogs = [hello(), light(), check(), apply(), reboot()]
 
 credentials_file = "google-creds.json"
+
+# Don't process recognized words unless it starts with:
+wake_word = "system"
 
 # End stuff to change (should change, rather)
 
@@ -14,18 +18,12 @@ import os, sys, datetime, subprocess, sys
 import speech_recognition as sr
 from assistant_utils import speak, log, info, err
 
-argv = None
-
-if len(sys.argv) > 1:
-    argv = sys.argv[1]
-
 cont = ""
 r = None
 
 r = sr.Recognizer()
 
 speak("We're starting up")
-
 
 while True:
 
