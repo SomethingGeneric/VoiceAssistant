@@ -43,6 +43,7 @@ while True:
     try:
 
         # Google apparently tries to capitalize sometimes??
+        # she weird weird
         cont = cont.lower()
 
         info("Got: " + cont)
