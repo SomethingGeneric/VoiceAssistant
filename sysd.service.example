@@ -1,0 +1,12 @@
+[Unit]
+Description=Voice Assistant
+After=network.target
+
+[Service]
+User=matt
+WorkingDirectory=/home/matt/VoiceAssistant
+ExecStart=python3 assist.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
