@@ -1,6 +1,6 @@
 from assistant_utils import speak, sanitize
 
-import os,sys
+import os, sys
 
 # These cog(s) are meant for Arch Linux
 # if it fails, make sure to install pacman-contrib
@@ -64,10 +64,12 @@ class reboot:
         speak("Goodbye. System restarting.")
         os.system("reboot")
 
+
 class update:
     def __init__(self):
         self.triggers = ["update program"]
-    def run(self,raw):
+
+    def run(self, raw):
         speak("Updating the source code")
         os.system("git pull")
         os.system("git --no-pager log --decorate=short --pretty=oneline -n1 > tmpf")

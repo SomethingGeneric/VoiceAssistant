@@ -1,11 +1,13 @@
-from assistant_utils import speak,sanitize
+from assistant_utils import speak, sanitize
 
-import urllib,requests,json
+import urllib, requests, json
+
 
 class weather:
     def __init__(self):
         self.triggers = ["weather"]
-    def run(self,raw):
+
+    def run(self, raw):
         search = sanitize(self.triggers, raw)
 
         speak("Getting weather data for: " + search)
@@ -31,9 +33,9 @@ class weather:
                 "It feels like " + str(things["feelslike"]) + " degrees",
                 "The conditions are " + things["weather_descriptions"][0],
                 "The wind speed is " + str(things["wind_speed"]) + " miles per hour",
-                "There is " +  str(things["precip"]) + " percent precipitation",
-                "It is " + str(things["humidity"])  + " percent humid",  
-                "The cloud cover percent is " + str(things["cloudcover"]) + " percent", 
+                "There is " + str(things["precip"]) + " percent precipitation",
+                "It is " + str(things["humidity"]) + " percent humid",
+                "The cloud cover percent is " + str(things["cloudcover"]) + " percent",
                 "There are " + str(things["visibility"]) + " miles of visibility",
             ]
 
